@@ -1,0 +1,38 @@
+/*STORED PROCEDURES
+Group of sql statments stored as a object with some given name
+*/
+
+Select * from EmployeeDetails;
+Select count(*) from EmployeeDetails;
+Select * from EmployeeSalary ;
+
+Delimiter $$
+Create procedure proc1 ()
+Begin
+Select * from EmployeeDetails;
+Select count(*) from EmployeeDetails;
+Select * from EmployeeSalary ;
+End $$
+Delimiter ;
+call proc1();
+
+
+/* procedure with input parameter */
+
+Delimiter $$
+create procedure proc2 (IN dept Varchar(50) )
+begin
+select * from EmployeeDetails where Department =dept;
+select count(*) from EmployeeDetails where Department =dept;
+end $$
+Delimiter ;
+call proc2('IT');
+
+/* procedure with output parameter */
+Delimiter $$
+create procedure proc3 (in dept  Varchar(50), out empcount int )
+begin
+select * from EmployeeDetails where Department =dept;
+select count(*) into empcount from EmployeeDetails where Department =dept;
+end $$
+Delimiter ;
