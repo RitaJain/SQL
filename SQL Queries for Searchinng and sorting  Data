@@ -1,0 +1,32 @@
+# Search Queires
+SELECT 
+    Emp_no, 
+    First_name,
+    Last_name   
+FROM
+    EmployeeDetails
+WHERE
+    Last_name LIKE 'a%';
+
+B) Using MySQL LIKE with underscore( _ ) wildcard examples
+Below Query will search for those employee names which starts with T and ends with M
+e.g Tim , Tom
+SELECT 
+    employeeNumber, 
+    lastName, 
+    firstName
+FROM
+    employees
+WHERE
+    lastname LIKE 'T_m';
+    
+    
+    # Sorting query
+    SELECT 
+   select_list
+FROM 
+   table_name
+ORDER BY 
+   column1 [ASC|DESC], 
+   column2 [ASC|DESC],
+   ...;
